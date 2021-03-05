@@ -1,0 +1,14 @@
+server:
+  port: 8761
+spring:
+  application:
+    name: SCW-REGISTER
+eureka:
+  instance:
+    hostname: localhost #域名
+  client:
+    register-with-eureka: false #不再注册到其他注册中心
+    fetch-registry: false #不再从其他注册中心拉取服务信息，保证单个节点
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka
+#eureka相关配置
